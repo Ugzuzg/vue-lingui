@@ -6,13 +6,20 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
   },
   "dependencies": {
+    "@lingui/core": "^3.0.0-13",
+    "@lingui/macro": "^3.0.0-13",
+    "babel-plugin-macros": "^2.8.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@lingui/cli": "^3.0.0-13",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-plugin-unit-jest": "~4.4.0",
