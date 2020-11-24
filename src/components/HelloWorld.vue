@@ -2,24 +2,30 @@
   <div class="hello">
     <Trans id="id.msg" />
     <Trans id="Hello {name}" :values="{ name: 'Jaryk' }" />
-    <Trans id="<abc>Hello</abc> <b>{name} <i>{last}</i></b>!" :values="{ name: 'Jaryk', last: 'Viktorchyk' }">
+    <Trans id="<abc>Hello</abc> <y>{name} <x>{last}</x></y>!" :values="{ name: 'Jaryk', last: 'Viktorchyk' }">
       <template v-slot:abc>
-        <del />
+        <a href="/some-page" style="font-size: 100px">
+          <del>x<abc /></del>
+        </a>
       </template>
-      <template v-slot:b>
-        <b />
+      <template v-slot:y>
+        <b><y /></b>
       </template>
-      <template v-slot:i>
-        <i />
+      <template v-slot:x>
+        <i><x /></i>
       </template>
     </Trans>
+    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 1 }" />
+    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 2 }" />
+    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 12 }" />
+    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 21 }" />
     {{ macroMessage }}
+    {{ computedMacroMessage }}
   </div>
 </template>
 
 <script>
-import { Trans } from '../'
-import { t } from '@lingui/macro'
+import { Trans, linguiI18n } from '../../lib'
 
 export default {
   name: 'HelloWorld',
@@ -29,8 +35,14 @@ export default {
   data() {
     const name = 'Jaryk'
     return {
-      macroMessage: t`Hello ${name}`,
+      macroMessage: this[linguiI18n].i18n._('Hello {name}', { name }),
     }
+  },
+  computed: {
+    computedMacroMessage() {
+      const name = 'Jaryk'
+      return this[linguiI18n].i18n._('Hello {name}', { name })
+    },
   },
 }
 </script>

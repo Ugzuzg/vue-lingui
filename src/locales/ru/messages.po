@@ -13,6 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/App.tsx:15
+#: src/components/HelloWorld.vue:3
+msgid "id.msg"
+msgstr "Сообщение"
+
+#: src/components/HelloWorld.vue:18
+msgid "I have {numBooks, plural, one {# book} other {# books}}"
+msgstr "У меня есть {numBooks, plural, one {# книга} few {# книги} other {# книг}}"
+
+#: src/components/HelloWorld.vue:33
 msgid "Hello {name}"
 msgstr "Привет, {name}"
