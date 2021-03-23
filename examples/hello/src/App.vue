@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { linguiI18n } from '../lib'
+import { linguiI18n } from '@ugzuzg/lingui-vue'
 
 import HelloWorld from './components/HelloWorld.vue'
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { en, ru } from 'make-plural/plurals'
 import App from './App.vue'
-import { LinguiPlugin, setupI18n } from '../lib'
+import { LinguiPlugin, setupI18n } from '@ugzuzg/lingui-vue'
 import enCatalog from './locales/en/messages'
 import ruCatalog from './locales/ru/messages'
 

@@ -1,13 +1,21 @@
 {
-  "name": "vue-lingui",
+  "name": "hello",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
+  },
   "dependencies": {
+    "@ugzuzg/lingui-vue": "*",
     "@lingui/core": "^3.7.2",
     "@lingui/macro": "^3.7.2",
     "babel-plugin-macros": "^2.8.0",
@@ -21,7 +29,6 @@
     "@vue/cli-plugin-unit-jest": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",

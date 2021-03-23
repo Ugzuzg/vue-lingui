@@ -9,5 +9,5 @@ module.exports = {
   locales: ['en', 'ru'],
   sourceLocale: 'en',
   format: 'po',
-  runtimeConfigModule: ['./lib/index', 'i18n'],
+  runtimeConfigModule: ['@ugzuzg/lingui-vue', 'i18n'],
 }

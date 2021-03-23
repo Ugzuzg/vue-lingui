@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import { Trans, linguiI18n } from '../../lib'
+import { t } from '@lingui/macro'
+import { Trans } from '@ugzuzg/lingui-vue'
 
 export default {
   name: 'HelloWorld',
@@ -32,7 +33,7 @@ export default {
   computed: {
     computedMacroMessage() {
       const name = 'Jaryk'
-      return this[linguiI18n].i18n._('Hello {name}', { name })
+      return t`Hello ${name}`
     },
   },
 }

@@ -1,0 +1,21 @@
+{
+  "name": "@ugzuzg/lingui-vue",
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ugzuzg/vue-lingui"
+  },
+  "main": "dist/lingui-vue.common.js",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --name lingui-vue src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@lingui/core": "^3.0.0"
+  },
+  "files": [
+    "dist/*"
+  ]
+}
