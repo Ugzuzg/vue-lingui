@@ -1,3 +1,5 @@
+import { h } from 'vue'
+
 import { linguiI18n } from '../i18n-context.js'
 
 // match <0>paired</0> and <1/> unpaired tags
@@ -47,7 +49,7 @@ function getElements(parts) {
   return [[paired || unpaired, children || '', after]].concat(getElements(parts.slice(4, parts.length)))
 }
 
-function formatElements(h, value, elements) {
+function formatElements(value, elements) {
   // const uniqueId = makeCounter(0, '$lingui$')
   const parts = value.replace(nlRe, '').split(tagRe)
 
@@ -106,9 +108,9 @@ export const Trans = {
       return this.gotI18nContext ? this.i18n._(id, values, { message, formats }) : id
     },
   },
-  render(h) {
+  render() {
     const Tag = this.tag || this.defaultTag || 'span'
-    const tree = formatElements(h, this.translation, this.$scopedSlots)
+    const tree = formatElements(this.translation, this.$slots)
     return h(Tag, {}, tree)
   },
 }

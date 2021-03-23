@@ -6,14 +6,15 @@
     "type": "git",
     "url": "https://github.com/Ugzuzg/vue-lingui"
   },
-  "main": "dist/lingui-vue.common.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "vue-cli-service build --target lib --name lingui-vue src/index.js"
   },
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "@lingui/core": "^3.0.0"
+    "@lingui/core": "^3.0.0",
+    "vue": "2.x || 3.x"
   },
   "files": [
     "dist/*"
