@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <button @click="toggleLocale">{{ locale }}</button>
+    <button @click="locale = 'en-GB'">en-GB</button>
+    <button @click="locale = 'ru'">ru</button>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      locale: 'en',
+      locale: 'en-GB',
     }
   },
   watch: {
@@ -27,11 +27,6 @@ export default {
       handler() {
         this[linguiI18n].i18n.activate(this.locale)
       },
-    },
-  },
-  methods: {
-    toggleLocale() {
-      this.locale = this.locale === 'en' ? 'ru' : 'en'
     },
   },
 }

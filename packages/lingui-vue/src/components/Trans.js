@@ -100,15 +100,33 @@ export const Trans = {
     gotI18nContext() {
       return this.i18n && typeof this.i18n._ === 'function'
     },
+    v() {
+      const values = { ...this.values }
+      const components = { ...this.$scopedSlots }
+
+      Object.keys(this.$scopedSlots).forEach(key => {
+        const index = Object.keys(components).length
+
+        components[index] = this.$scopedSlots[key]
+        values[key] = `<${index}/>`
+      })
+
+      return { values, components }
+    },
     translation() {
-      const { id, message, formats, values } = this
+      const {
+        id,
+        message,
+        formats,
+        v: { values },
+      } = this
 
       return this.gotI18nContext ? this.i18n._(id, values, { message, formats }) : id
     },
   },
   render(h) {
     const Tag = this.tag || this.defaultTag || 'span'
-    const tree = formatElements(h, this.translation, this.$scopedSlots)
+    const tree = this.translation ? formatElements(h, this.translation, this.v.components) : null
     return h(Tag, {}, tree)
   },
 }

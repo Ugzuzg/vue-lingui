@@ -2,9 +2,9 @@
   <div class="hello">
     <Trans id="id.msg" />
     <Trans id="Hello {name}" :values="{ name: 'Jaryk' }" />
-    <Trans id="<abc>part1</abc> <y>bold slot</y> <x>italic</x>!">
+    <Trans id="<abc>Click here</abc> <y>to go to</y> <x>a different page</x>!">
       <template v-slot:abc="{ translation }">
-        <a href="/some-page" style="font-size: 100px">{{ translation }}</a>
+        <a href="/some-page">{{ translation }}</a>
       </template>
       <template v-slot:y="{ translation }">
         <b>{{ translation }}</b>
@@ -14,9 +14,12 @@
       </template>
     </Trans>
     <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 1 }" />
-    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 2 }" />
-    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 12 }" />
-    <Trans id="I have {numBooks, plural, one {# book} other {# books}}" :values="{ numBooks: 21 }" />
+    <Trans id="I have {numBooksSlot} {numBooks, plural, one {book} other {books}}" :values="{ numBooks }">
+      <template v-slot:numBooksSlot>
+        <input v-model="numBooks" type="number" style="width: 40px" />
+      </template>
+    </Trans>
+    <Trans id="Today is {date, date}" :values="{ date: new Date() }" />
     {{ computedMacroMessage }}
   </div>
 </template>
@@ -29,6 +32,11 @@ export default {
   name: 'HelloWorld',
   components: {
     Trans,
+  },
+  data() {
+    return {
+      numBooks: 1,
+    }
   },
   computed: {
     computedMacroMessage() {

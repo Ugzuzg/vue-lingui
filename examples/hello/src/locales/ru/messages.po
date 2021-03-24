@@ -13,14 +13,26 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/HelloWorld.vue:3
-msgid "id.msg"
-msgstr "Сообщение"
+#: src/components/HelloWorld.vue:33
+msgid "Hello {name}"
+msgstr "Привет, {name}"
 
 #: src/components/HelloWorld.vue:18
 msgid "I have {numBooks, plural, one {# book} other {# books}}"
 msgstr "У меня есть {numBooks, plural, one {# книга} few {# книги} other {# книг}}"
 
+#: src/components/HelloWorld.vue:3
+msgid "id.msg"
+msgstr "Сообщение"
+
 #: src/components/HelloWorld.vue:33
-msgid "Hello {name}"
-msgstr "Привет, {name}"
+msgid "<abc>Click here</abc> <y>to go to</y> <x>a different page</x>!"
+msgstr "<abc>Кликни здесь</abc>, <y>чтобы перейти</y> <x>на другую страницу</x>!"
+
+#: src/components/HelloWorld.vue:18
+msgid "I have {numBooksSlot} {numBooks, plural, one {book} other {books}}"
+msgstr "У меня есть {numBooksSlot} {numBooks, plural, one {книга} few {книги} other {книг}}"
+
+#: src/components/HelloWorld.vue:18
+msgid "Today is {date, date}"
+msgstr "Сегодня {date, date}"

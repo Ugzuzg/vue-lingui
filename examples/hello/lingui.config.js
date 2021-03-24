@@ -10,4 +10,7 @@ module.exports = {
   sourceLocale: 'en',
   format: 'po',
   runtimeConfigModule: ['@ugzuzg/lingui-vue', 'i18n'],
+  extractBabelOptions: {
+    presets: ['@vue/cli-plugin-babel/preset'],
+  },
 }
