@@ -20,7 +20,7 @@
     "@lingui/macro": "^3.7.2",
     "babel-plugin-macros": "^2.8.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.12"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@lingui/cli": "^3.7.2",
